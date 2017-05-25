@@ -1,0 +1,11 @@
+.rightContent{
+    position: relative;
+    width: 75%;
+    height: 100%;
+    float: right;
+    overflow－y: auto;
+    overflow-x: hidden;
+    padding: 0 30px;
+    box-sizing: border-box;
+    background: whitesmoke;
+}

@@ -1,0 +1,36 @@
+body, html{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+
+.wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+}
+
+.basic{
+    display: inline-block;
+    width: 0px;
+    height: 100%;
+    vertical-align: middle;
+}
+.middle{
+    position: relative;
+    composes: clearfix from './util.css';
+    height: calc(100% - 100px);
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.footBar{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+}

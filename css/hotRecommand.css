@@ -1,0 +1,111 @@
+.wrapper{
+    position: relative;
+    padding-top: 50px;
+
+}
+
+.titleWrapper{
+    padding: 3px 0;
+    border-bottom:3px solid rgba(107,118,127,0.57);
+    display: inline-block;
+}
+
+.title{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.border{
+    border-bottom:2px solid #CCCCCC
+}
+.albumWrapper{
+    position: relative;
+    composes: clearfix from './util.css';
+    padding: 20px 0;
+}
+.item{
+    position: relative;
+    width: 50%;
+    height: 200px;
+    background: whitesmoke;
+    float: left;
+    box-sizing: border-box;
+    padding: 20px 0 20px 20px;
+    box-sizing: border-box;
+}
+
+.item:nth-child(1){
+    border-bottom: 1px solid gainsboro;
+}
+
+.item:nth-child(2){
+    border-left: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+.item:nth-child(3){
+    border-right: 1px solid gainsboro;
+}
+.imgWrapper{
+    position: relative;
+    height: 100%;
+    width: 160px;
+    background: #eeeeee;
+    float: left;
+    text-align: center;
+    display: table;
+}
+.textWrapper{
+    position: relative;
+    margin-left: 160px;
+    height: 100%;
+    padding: 10px 5px 10px  20px;
+    box-sizing: border-box;
+}
+.imgAlbum{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.textInnerWrapper{
+    position: relative;
+    composes: clearfix from './util.css';
+}
+.textUp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    font-size: 1.4em;
+}
+.textDown{
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 4px;
+    color: grey;
+}
+.textUpRecommand{
+    position: absolute;
+    top: 25%;
+    left: 0;
+    display: block;
+}
+.textDownRecommand{
+    position: absolute;
+    top: 55%;
+    left: 0;
+    display: block;
+    color: grey;
+}
+.recommandWrapper{
+    position: relative;
+    text-align: center;
+    font-size: 6em;
+    vertical-align: middle;
+    display: table-cell;
+    width: 100%;
+    height: 160px;
+    -webkit-text-fill-color: #f36;
+    -webkit-text-stroke: 2px #000;
+
+}

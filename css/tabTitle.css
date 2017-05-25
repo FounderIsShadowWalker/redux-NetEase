@@ -1,0 +1,24 @@
+.wrapper{
+    text-align: center;
+    border-bottom: 2px solid #CCCCCC;
+}
+.titleItem{
+    padding: 1em 0;
+    width: 12%;
+    height: 1em;
+    display: inline-block;
+}
+
+.disActiveItem{
+    cursor: pointer;
+    color: black;
+}
+
+.activeItem{
+   cursor: pointer;
+   color: red;
+}
+
+.disActiveItem:hover{
+    color: red;
+}

@@ -1,0 +1,84 @@
+.wrapper{
+    position: relative;
+    padding: 30px 0 60px;
+}
+.titleWrapper{
+    padding: 3px 0;
+    border-bottom:3px solid rgba(107,118,127,0.57);
+    display: inline-block;
+}
+.title{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.border{
+    border-bottom:2px solid #CCCCCC
+}
+.songWrapper{
+    position: relative;
+}
+.playAllWrapper{
+    height: 40px;
+    background: #FAFAFA;
+    display: block;
+    width: 100%;
+}
+.playAllText{
+    position: relative;
+    line-height: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.icon{
+    background: url("../img/play.png") no-repeat;
+    background-size: 1.5em 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    margin-right: 15px;
+}
+.songColumn{
+    position: relative;
+    width: calc(50% - 1px);
+    box-sizing: border-box;
+    float: left;
+}
+.songWrapper{
+    position: relative;
+    height: 28px;
+    line-height: 28px;
+}
+.songWrapper:nth-child(odd){
+    background: #FFFFFF;
+}
+.songWrapper:nth-child(even){
+    background: #FAFAFA;
+}
+.songWrapper:hover{
+    background: #E1E1E1;
+}
+
+.index{
+    position: relative;
+    left: 5%;
+    cursor: default;
+}
+.name{
+    position: relative;
+    left: 10%;
+    cursor: default;
+}
+.artists{
+    position: absolute;
+    right: 5%;
+    cursor: default;
+}
+.columnWrapper{
+    border: 1px solid #dddddd;
+    composes: clearfix from './util.css';
+    margin-top: 30px;
+}

@@ -1,0 +1,102 @@
+.titleLeft{
+   position: absolute;
+   left: 4%;
+}
+
+.iconRight{
+    position: absolute;
+}
+
+.titleRightMail{
+   composes: iconRight;
+   right: 15%;
+}
+
+.titleRightSetting{
+    composes: iconRight;
+    right: 10%;
+}
+.titleRightFigure{
+    composes: iconRight;
+    right: 5%;
+}
+
+.mail{
+  background: url("../img/mail.png") center/cover no-repeat;
+  width: 2em;
+  height: 2em;
+  display: block;
+}
+
+.setting{
+    background: url("../img/setting.png") center/cover no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
+}
+
+.figure{
+    background: url("../img/figure.png") center/cover no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
+}
+
+.titleSearch{
+  position: absolute;
+  height: 2em;
+  width: 220px;
+  left: 20%;
+}
+
+.searchPic{
+    position: absolute;
+    background: url("../img/search.png") center/cover no-repeat;
+    width: 1em;
+    height: 1em;
+    top: 50%;
+    margin-top: -0.5em;
+    display: block;
+    float: left;
+    z-index: 1;
+    left: 8px;
+}
+
+.search{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  height: 20px;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  color: grey;
+  border-radius: 10px;
+  padding-left: 3.5em;
+  cursor: default;
+  font-size: 12px;
+}
+.search:focus{
+    outline: none;
+}
+
+.largeTitle{
+   font-size: 1.5em;
+}
+
+.wrapper{
+    composes: clearfix from './util.css';
+    background: #B72712;
+    padding: 0.2em;
+    height: 50px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    align-items: center;
+    box-sizing: border-box;
+}
+

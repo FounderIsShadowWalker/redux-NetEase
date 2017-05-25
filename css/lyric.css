@@ -1,0 +1,18 @@
+.lyricWrapper{
+    position: relative;
+    width: 100%;
+    transition: all 1s linear;
+    height: calc(100% - 98px);
+    overflow: scroll;
+    transition: 1s all linear;
+}
+.lyricSpan{
+    display: block;
+    height: 25px;
+    color: #000000;
+}
+.activeSpan{
+    display: block;
+    height: 25px;
+    color: #FFFFFF;
+}

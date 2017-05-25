@@ -1,0 +1,94 @@
+.wrapper{
+    position: relative;
+    width: 540px;
+    height: 140px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    perspective:800px;
+    perspective-origin:50% 50%;
+    overflow: hidden;
+}
+.img{
+    position: relative;
+    width: 180px;
+    height: 100%;
+    background: yellow;
+    display: block;
+    transform: rotateY(-45deg);
+}
+
+.li-1{
+    transform: rotateY(45deg);
+
+}
+.li-2{
+    transform: scale(1.5, 1.2) rotateY(0deg);
+    z-index: 2;
+
+}
+.li-3{
+    transform: rotateY(-45deg);
+}
+ul{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 900px;
+    height: 100px;
+    left: 0px;
+}
+li{
+    position: relative;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+    overflow: hidden;
+    transition: all 1s ease;
+    z-index: 1;
+}
+
+ul:after, before{
+    content: '';
+    clear: both;
+}
+.tab{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-top: 30px;
+    background: grey;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.tabWrapper{
+    text-align: center;
+}
+.active{
+    background: red;
+}
+
+.wrapper .left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100px;
+    background: transparent;
+    margin-top: 20px;
+    transform: rotateY(45deg);
+    z-index: 3;
+}
+.wrapper .right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100px;
+    background: transparent;
+    margin-top: 20px;
+    transform: rotateY(-45deg);
+    z-index: 3;
+}

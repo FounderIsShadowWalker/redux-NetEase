@@ -1,0 +1,13 @@
+.duration{
+    width: 10%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    border-left: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    padding: 5px 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

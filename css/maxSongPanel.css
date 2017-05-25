@@ -1,0 +1,227 @@
+.wrapper{
+    position: absolute;
+    left: -75%;
+    top: calc(100% - 120px);
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease;
+    z-index: -1;
+    overflow: scroll;
+
+}
+.wrapper:before{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    -webkit-filter: blur(10px);
+    filter: blur(10px) brightness(1.2);
+    background: url('../img/frost.png') 0/cover no-repeat;
+    margin: -10px;
+}
+.minButton{
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+    top: 20px;
+    right: 20px;
+    background: whitesmoke;
+}
+.minButton:before{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: url("../img/min.png") 0/cover no-repeat;
+    transform: scale(0.8, 0.6);
+}
+.left{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+.right{
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    float: right;
+    overflow: scroll;
+}
+.songTable{
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 78%;
+}
+.songWrapper{
+    position: relative;
+    display: table-cell;
+    width: 100%;
+    height: 50%;
+    padding: 0 120px 0 90px;
+    box-sizing: border-box;
+}
+.record{
+    position: relative;
+    top: 50px;
+    display: inline-block;
+    width: 320px;
+    height: 320px;
+    border-radius: 100%;
+    background-image: radial-gradient(circle, red 75px, rgba(22,22,22,0.97) 0px, black 80px,
+    black 0, black 103px, rgba(186,186,186,0.54) 0px,  rgba(186,186,186,0.54) 106px,
+    black 0, black 130px, rgba(186,186,186,0.54) 0px, rgba(186,186,186,0.54) 133px,
+    black 0, black 137px);
+    animation: rotate 5s infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 0px 10px rgba(207,207,207, 0.97),
+                -5px 0px 10px rgba(207,207,207, 0.97),
+                0px 5px 10px rgba(207,207,207, 0.97),
+                0px -5px 10px rgba(207,207,207, 0.97);
+}
+.needle{
+    position: relative;
+    top: -20px;
+    left: 50%;
+    width: 80px;
+    height: 140px;
+    background: url("../img/ic_needle.png") 0/cover no-repeat;
+    background-size: 80px 140px;
+    z-index: 999;
+    transform: rotateZ(-30deg);
+    transform-origin: top left;
+    transition: all 1s linear;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.albumPic{
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 3px rgba(207,207,207, 0.57);
+}
+
+.buttonWrapper{
+    position: absolute;
+    bottom: 0px;
+    height: 60px;
+    width: 350px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+.buttonWrapper:before{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 0px;
+    height: 100%;
+    vertical-align: middle;
+}
+.songAction{
+    position: relative;
+    height: 100%;
+    flex: 1;
+    border-radius: 3px;
+    background: whitesmoke;
+    border: 0px;
+    margin-left: 15px;
+    font-size: 0.9em;
+    color: rgba(107,118,127,0.66);
+}
+
+.songAction:nth-child(1){
+    margin-left: 0px;
+}
+.titleBar{
+    position: relative;
+    top: 0px;
+    padding-top: 30px;
+    width: 100%;
+    height: 98px;
+    box-sizing: border-box;
+}
+.songName{
+    font-size: 1.5em;
+    display: block;
+}
+.songInfo{
+    position: relative;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    padding: .7em 0 ;
+    border-bottom: 2px solid rgba(107,118,127,.8);
+    bottom: 0;
+}
+.albumName, .artist, .source{
+    position: relative;
+    font-size: .9em;
+    margin-right: 50px;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: default;
+    color: rgba(107,118,127,1);
+}
+
+.albumName{
+    max-width: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.songData{
+    color: #367BCB;
+}
+.like, .collect, .download, .share{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+.like{
+    background: url("../img/heart.png");
+    background-size: 20px 20px;
+}
+.collect{
+    background: url("../img/collect.png");
+    background-size: 20px 20px;
+}
+.download{
+    background: url("../img/download.png");
+    background-size: 20px 20px;
+}
+.share{
+    background: url("../img/share.png");
+    background-size: 20px 20px;
+}
+.comment{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: red;
+}

@@ -1,0 +1,185 @@
+.wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    align-items: center;
+    z-index: 1;
+    height: 100%;
+    overflow: hidden;
+}
+.audio{
+    display: none;
+}
+.wrapper::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-filter: blur(10px);
+    filter: blur(10px) brightness(2);
+    background: url('../img/frost.png') 0 / cover fixed;
+    margin: -20px;
+}
+
+.frostGlass{
+    position: absolute;
+    composes: clearfix from './util.css';
+    height: 100%;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.prev{
+  position: relative;
+  background: red;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  left: 2%;
+}
+.prevIcon{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    background-image: url("../img/prev.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    display: block;
+    height: 20px;
+}
+.play{
+    position: relative;
+    background: red;
+    display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: 42px;
+    left: 3.5%;
+    text-align: center;
+}
+.playIcon{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    background-image: url("../img/playdown.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    display: block;
+    height: 20px;
+}
+.next{
+    position: relative;
+    background: red;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    left: 5%;
+}
+.nextIcon{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    background-image: url("../img/next.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    display: block;
+    height: 20px;
+}
+.progressBar{
+    position: relative;
+    width: 40%;
+    height: 4px;
+    background: grey;
+    border-radius: 4px;
+    left: 9%;
+}
+.timeText{
+    position: relative;
+    height: 1em;
+    left: 12%;
+    color: gray;
+}
+.volumn{
+    position: relative;
+    height: 29px;
+    width: 29px;
+    background: url("../img/volumn.png") 0/cover no-repeat;
+    left: 15%;
+    display: block;
+}
+.volumnBar{
+    position: relative;
+    width: 10%;
+    height: 4px;
+    background: linear-gradient(90deg, red 50%, gray 50%);
+    border-radius: 4px;
+    left: 16%;
+}
+.random{
+    position: relative;
+    height: 29px;
+    width: 29px;
+    background: url("../img/random.png") 0/contain no-repeat;
+    left: 17%;
+    display: block;
+    transform: scale(1.1);
+}
+.lyric{
+    position: relative;
+    height: 29px;
+    width: 29px;
+    background: url("../img/lyric.png") 0/contain no-repeat;
+    left: 18%;
+    display: block;
+}
+.playList{
+    position: relative;
+    height: 29px;
+    width: 29px;
+    background: url("../img/playlist.png") 0/contain no-repeat;
+    left: 19%;
+    display: block;
+}
+.songs{
+    position: relative;
+    height: 1em;
+    left: 19.5%;
+    border-radius: 5px;
+    background: #CCCCCC;
+    padding: 4px;
+    color: whitesmoke;
+}
+.progrssCircle{
+    position: absolute;
+    left: -9px;
+    top: -9px;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    border-radius: 18px;
+    background: radial-gradient(9px 10px, red 3px, rgba(234,238,214,1) 3px);
+}
+.volumnButton{
+    position: absolute;
+    top: 0%;
+    margin-top: -4px;
+    left: calc( 50% - 6px);
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: whitesmoke;
+    cursor: default;
+}

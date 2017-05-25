@@ -1,0 +1,49 @@
+.wrapper{
+   position: absolute;
+   top: 45px;
+   left: 0;
+   width: calc(100% + 3.5em);
+   border-radius: 4px;
+   font-size: 12px;
+   border: 1px solid #CCCCCC;
+   z-index: 999;
+   background: whitesmoke;
+   overflow: hidden;
+   display: none;
+}
+.songName{
+    position: block;
+    line-height: 28px;
+    font-size: 12px;
+    color: grey;
+    color: #2D77CB;
+}
+.author{
+    color: black;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    height: 100%;
+}
+.item{
+    border-bottom: 1px solid #dddddd;
+    padding-left: 3.5em;
+    height: 28px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+.item:hover{
+    background: #F3F3F3;
+}
+.title{
+    width: 100%;
+    height: 28px;
+    color: black;
+    line-height: 28px;
+    padding-left: 3.5em;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 12px;
+    border: 1px solid #dddddd;
+}

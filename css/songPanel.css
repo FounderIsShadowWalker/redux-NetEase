@@ -1,0 +1,131 @@
+.wrapper{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 25%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(252,252,252,0.67);
+    display: none;
+
+}
+.wrapper::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-filter: blur(10px);
+    filter: blur(10px) brightness(1.7);
+    background: url('../img/frost.png') 0 / cover fixed;
+    margin: -20px;
+}
+
+.img{
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: #CCCCCC;
+    overflow: hidden;
+    float: left;
+}
+.textWrapper{
+    position: relative;
+    display: inline-block;
+    height: 90px;
+    width: calc(100% - 90px);
+    flex: 1;
+    box-sizing: border-box;
+}
+.itemName{
+    position: absolute;
+    top: 50%;
+    margin-top: -1.3em;
+    display: block;
+    width: 100%;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.itemAuthor{
+    position: absolute;
+    top: 50%;
+    margin-top: 0.3em;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding-left: 30px;
+    color: #777777;
+
+}
+.name{
+    height: 25px;
+    line-height: 25px;
+}
+.author{
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+}
+.share{
+    position: absolute;
+    right: 1em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    display: block;
+    background: url("../img/share.png") 0/cover no-repeat;
+    background-size: 20px 20px;
+}
+.love{
+    position: absolute;
+    right: 1em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    display: block;
+    background: url("../img/heart.png") 0/cover no-repeat;
+    background-size: 20px 20px;
+}
+.imgWrapper{
+    position: relative;
+    height: 90px;
+    width: 90px;
+    display: inline-block;
+    text-align: center;
+}
+.imgWrapper:hover:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(83,83,83,0.66);
+    z-index: 1;
+}
+.imgWrapper:hover:after{
+    position: absolute;
+    content: '';
+    background: url("../img/maxSong.png") 0/cover no-repeat;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    transform:scale(0.6,0.6);
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    box-shadow: inset 90px 90px rgba(83,83,83,0.2);
+}

@@ -1,0 +1,71 @@
+.wrapper{
+    position: relative;
+    height: 100%;
+    width: 25%;
+    background: rgba(223,231,224,0.57);
+    border-radius: .3em;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset;
+    float: left;
+}
+
+.wrapper:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.recommend{
+    position: relative;
+    padding-bottom: 1em;
+}
+.title{
+    position: relative;
+    padding: .2em 0 .5em 1.5em;
+    font-size: 1em;
+    color: gray;
+}
+.listItem{
+    position: relative;
+    height: 2em;
+    line-height: 2em;
+    padding-left: 4em;
+    box-sizing: border-box;
+}
+.iconLeftBar{
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5em;
+    margin-left: -1.5em;
+    display: block;
+    width: 1em;
+    height: 1em;
+}
+.iconMusic{
+    composes: iconLeftBar;
+    background: url("../img/muisc.png") center/cover no-repeat;
+}
+.iconFM{
+    composes: iconLeftBar;
+    background: url("../img/radio.png") center/cover no-repeat;
+}
+.iconMV{
+    composes: iconLeftBar;
+    background: url("../img/mv.png") center/cover no-repeat;
+}
+.iconFriend{
+    composes: iconLeftBar;
+    background: url("../img/friend.png") center/cover no-repeat;
+}
+.iconDownload{
+    composes: iconLeftBar;
+    background: url("../img/download.png") center/cover no-repeat;
+}
+.iconHeart{
+    composes: iconLeftBar;
+    background: url("../img/heart.png") center/cover no-repeat;
+}
