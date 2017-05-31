@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # react-demo
 react基础环境配置
 =======
@@ -10,4 +10,4 @@ react基础环境配置
 
 有空会把readme写好的
 
->>>>>>> origin/master
+
