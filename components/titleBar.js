@@ -5,13 +5,13 @@ import style from '../css/titleBar.css';
 import SearchList from '../containers/searchList';
 
 var timer = null;
-
+var loadFlag = false;
 export default class titleBar extends Component{
 
     searchSongs(event){
         var value = event.target.value;
         if(value !== "") {
-            this.throttle(this.props.inputChange, 300, value);
+            this.throttle.call(this, this.props.inputChange, 200, value);
         }
     }
 
@@ -20,14 +20,29 @@ export default class titleBar extends Component{
         timer && (clearTimeout(timer), timer = null);
 
         timer = setTimeout(() => {
-              fn(para, 100, 0);
+              loadFlag = false;
+              fn(para, 100, 0).then(() => {
+                  loadFlag = true;
+              });
         }, delay)
     }
 
-    _onSubmit(e){
-        e.preventDefault();
+    showPanel(){
+        this._setSearchPanel();
+    }
+
+    _setSearchPanel(){
         this.props.showSearchPanel(-1);
         this.props.minWindow();
+    }
+    _onSubmit(e){
+        console.log('enter');
+        e.preventDefault();
+        if(loadFlag) {
+            loadFlag = false;
+
+            this.showPanel();
+        }
     }
 
     render(){

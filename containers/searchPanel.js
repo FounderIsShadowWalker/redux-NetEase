@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import SearchPanel from '../components/searchPanel';
 
-import {mapDispatchToProps} from './searchList'
+import {mapDispatchToProps} from './searchList';
 const mapStateToProps = (state) => ({
     songlist: state.titleBar.input,
     searchText: state.titleBar.searchText,

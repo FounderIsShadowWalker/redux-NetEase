@@ -1,0 +1,364 @@
+.wrapper{
+    position: relative;
+}
+.header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.imgWraper{
+    width: 180px;
+    height: 200px;
+    display: inline-block;
+}
+.img{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-reflect:below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,.3) 30%, rgba(250,250,250,.3) 30%, rgba(250,250,250,0));
+    overflow: hidden;
+}
+.info{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 50px;
+    box-sizing: border-box;
+    flex: 1;
+}
+.titleWrapper{
+    position: relative;
+}
+.songlistTitle{
+    display: inline-block;
+    border-radius: 2px;
+    padding: 3px 8px;
+    font-size: 14px;
+    color: whitesmoke;
+    vertical-align: middle;
+    background: red;
+}
+.songlistName{
+    display: inline-block;
+    font-size: 23px;
+    margin-left: 20px;
+    font-weight: bolder;
+    vertical-align: top;
+    width:360px;
+}
+.authorWrapper{
+    position: relative;
+    margin-top: 5px;
+    vertical-align: top;
+}
+.authorImg{
+    position: relative;
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+.authorText{
+    margin-left: 10px;
+    font-weight: bolder;
+    margin-right: 5px;
+}
+.buttonGroup{
+    height: 60px;
+    display: flex;
+    box-sizing: border-box;
+    padding-top: 25px;
+}
+.buttonWrapper{
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background: whitesmoke;
+    margin-right: 30px;
+}
+.buttonWrapper:before{
+    content: '';
+    position: relative;
+    left: 0;
+    top: 0;
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+}
+.buttonContent{
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0 10px;
+    white-space: nowrap;
+}
+.playAll{
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/play.png") 0/cover no-repeat;
+    width: 1.3em;
+    height: 1.3em;
+    background-size: 1.3em 1.3em;
+    margin-right: 5px;
+}
+.add{
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/addAlbum.png") 0/cover no-repeat;
+    width: 1.1em;
+    height: 1.1em;
+    background-size: 1.1em 1.1em;
+    margin: -4px 0px 0 4px;
+    border-left: 1px solid #b6b6b6;
+    padding-left: 5px;
+    background-origin: content-box;
+}
+.collect{
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/collect.png") 0/cover no-repeat;
+    width: 1.3em;
+    height: 1.3em;
+    background-size: 1.3em 1.3em;
+    margin-right: 5px;
+}
+.share{
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/share.png") 0/cover no-repeat;
+    width: 1.3em;
+    height: 1.3em;
+    background-size: 1.3em 1.3em;
+    margin-right: 5px;
+}
+.download{
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/download.png") 0/cover no-repeat;
+    width: 1.3em;
+    height: 1.3em;
+    background-size: 1.3em 1.3em;
+    margin-right: 5px;
+}
+.tagWrapper{
+    display: inline-block;
+    padding: 20px 0px 5px;
+    color: #0aa7ff;
+}
+.title{
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+    margin-right: 10px;
+}
+.introWrapper{
+    position: relative;
+}
+.introContent{
+    font-size: 14px;
+    color: #b6b6b6;
+}
+.right{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.rightTitle{
+    color: #b6b6b6;
+    text-align: center;
+}
+.rightContent{
+    color: #000000;
+    text-align: center;
+}
+.searchType{
+    position: relative;
+    padding-left: 30px;
+    height: 35px;
+    overflow: hidden;
+    margin-top: 60px;
+}
+.searchItem{
+    height: 100%;
+    background: #CCCCCC;
+    color: white;
+    padding: 10px 25px;
+    margin-right: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.searchItem:nth-child(1){
+    background: red;
+}
+.border{
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: red;
+}
+.songItemWrapper{
+    position: relative;
+    background: whitesmoke;
+    width: 100%;
+}
+.songItemWrapper:hover{
+    background: #CCCCCC;
+}
+.songItemWrapper:before{
+    position: relative;
+    content: '';
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+.songItemTitle{
+    position: relative;
+    width: 100%;
+    background: whitesmoke;
+    box-sizing: border-box;
+}
+.songIndex{
+    position: relative;
+    display: inline-block;
+    width: 6%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.duration{
+    width: 10%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    border-left: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    padding: 5px 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.operation{
+    width: 7%;
+    height: 100%;
+    display: inline-block;
+    text-align: left;
+    border-left: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    padding: 5px 3px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+.musicTitle{
+    width: 35%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    border-left: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    padding: 5px 0;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.singer{
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    border-left: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    padding: 5px 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.album{
+    width: 22%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    border-left: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    padding: 5px 0 ;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.songItemContent{
+    position: relative;
+    width: 100%;
+    background: whitesmoke;
+}
+.songItemWrapper{
+    position: relative;
+    background: whitesmoke;
+    width: 100%;
+}
+.songItemWrapper:before{
+    position: relative;
+    content: '';
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+.songIndex{
+    position: relative;
+    display: inline-block;
+    width: 6%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.operation{
+    width: 7%;
+    height: 100%;
+    display: inline-block;
+    text-align: left;
+    border-left: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    padding: 5px 3px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+.heart{
+    position: relative;
+    width: 50%;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/heart.png") 0/contain no-repeat;
+}
+.download{
+    position: relative;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/download.png") 0/contain no-repeat;
+}

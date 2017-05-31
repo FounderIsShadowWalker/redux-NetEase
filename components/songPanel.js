@@ -5,6 +5,7 @@ export default class songPanel extends Component{
 
 
     componentWillReceiveProps(nextState){
+        console.log(nextState);
         if (nextState.song) {
             var songWrapper = document.querySelector('#songWrapper');
             songWrapper.style.display = 'block';
@@ -20,7 +21,10 @@ export default class songPanel extends Component{
     render(){
         const { song } = this.props;
         var author = [];
-        if(song) {
+        if(song.artists || song.artist) {
+            if(Object.prototype.toString.call(song.artists || song.artist).indexOf('String') > -1){
+                song.artists = [song.artists];
+            }
             song.artists.forEach((artist, index) => {
                  author.push(artist['name']);
             });
@@ -30,7 +34,9 @@ export default class songPanel extends Component{
         return(
             <div className={style.wrapper} id="songWrapper" onClick={this.maxWindow.bind(this)}>
                    <div className={style.imgWrapper}>
-                       <img className={style.img} src={song && song.album.picUrl}/>
+                       <img className={style.img}
+                            src={song && (song.album.picUrl || song.picUrl)}
+                       />
                    </div>
                    <div className={style.textWrapper}>
                        <div className={style.itemName}>

@@ -69,11 +69,17 @@
 .name{
     height: 25px;
     line-height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .author{
     height: 25px;
     line-height: 25px;
     font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .share{
     position: absolute;

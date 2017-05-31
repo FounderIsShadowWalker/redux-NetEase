@@ -167,6 +167,7 @@ export  default class footBar extends Component{
     }
 
     render(){
+        console.log(this.props);
         return (
             <div className={style.frostGlass}>
                 <div className={style.wrapper}>

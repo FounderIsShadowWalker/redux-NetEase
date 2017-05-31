@@ -8,6 +8,7 @@ import maxSongPanel from './maxSongPanel';
 import lyric from './lyric';
 import pagination from './pagination';
 import comment from './comment';
+import album from './album';
 
 const mainReducer = combineReducers({
     tabReducer,
@@ -18,7 +19,8 @@ const mainReducer = combineReducers({
     maxSongPanel,
     lyric,
     pagination,
-    comment
+    comment,
+    album
 })
 
 export default mainReducer;

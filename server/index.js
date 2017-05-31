@@ -49,6 +49,18 @@ export function getComment(songid) {
         return [true, json];
     })
 }
+
+export function getAlbum(albumid) {
+    return requestPromise('playlist/detail?id=' + albumid, json => {
+        return [true, json];
+    })
+}
+
+export function getMusicUrl(songid) {
+    return requestPromise('music/url?id=' + songid, json => {
+        return [true, json];
+    })
+}
 // export function hotAlbum() {
 //     return requestPromise('recommend/resource', json => {
 //         return [true, json];

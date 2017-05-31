@@ -8,8 +8,8 @@ export  default  class Comment extends Component{
         return (<div className = {style.wrapper}>
                     <span className={style.wonderfulComment}>精彩评论</span>
                     {
-                        this.props.comment.hotComments && this.props.comment.hotComments.map((comment) => {
-                        return <div className={style.itemWrapper}>
+                        this.props.comment.hotComments && this.props.comment.hotComments.map((comment, index) => {
+                        return <div key={index} className={style.itemWrapper}>
                                  <div className={style.imgWrapper}>
                                     <img src={comment && comment.user.avatarUrl} className={style.avator}/>
                                  </div>

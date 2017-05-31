@@ -28,6 +28,7 @@ export  default class searchList extends Component{
     }
 
     playMusic(index){
+        console.log(this.props.songlist.songs[index]);
        this.props.setSongs(this.props.songlist.songs[index]);
 
        this.props.getLyric(this.props.songlist.songs[index].id);
@@ -39,7 +40,7 @@ export  default class searchList extends Component{
             <div className={style.wrapper} id="searchlist">
                <div className={style.title}>单曲</div>
                 {
-                        songlist.songs && songlist.songs.slice(0, 10).map((item, index) => {
+                        songlist && songlist.songs && songlist.songs.slice(0, 10).map((item, index) => {
                             return  (<div className={style.item} key={index} onClick={this.playMusic.bind(this, index)}>
                                         <span className={style.songName}> {item.name} -</span>
                                             {

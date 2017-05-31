@@ -3,6 +3,12 @@ import style from '../css/newSongs.css';
 
 export default class newSongs extends Component{
 
+    playSong(index){
+        this.props.setSongs(this.props.albumList[0]['/api/v1/discovery/new/songs'].data[index-1]);
+
+        this.props.getLyric(this.props.albumList[0]['/api/v1/discovery/new/songs'].data[index-1].id);
+    }
+
     render(){
         const { albumList } = this.props;
 
@@ -39,7 +45,8 @@ export default class newSongs extends Component{
                         <div className={style.songColumn}>
                             {
                                 finalData && finalData[0].map((item, index) => {
-                                    return (<div key={index} className={style.songWrapper}>
+                                    return (<div key={index} className={style.songWrapper}
+                                                 onClick={this.playSong.bind(this, (index + 1) * 2 - 1)}>
                                                 <span className={style.index}>
                                                     {
                                                         (index + 1) * 2 - 1 < 10 ?
@@ -57,7 +64,8 @@ export default class newSongs extends Component{
                         <div className={style.songColumn}>
                             {
                                 finalData && finalData[1].map((item, index) => {
-                                    return (<div key={index} className={style.songWrapper}>
+                                    return (<div key={index} className={style.songWrapper}
+                                                 onClick={this.playSong.bind(this, 2 * (index + 1))}>
                                                  <span className={style.index}>
                                                      {  2 * (index + 1) < 10 ?
                                                             `0${2 * (index + 1)}` : 2 * (index + 1)

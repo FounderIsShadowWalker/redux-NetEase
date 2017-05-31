@@ -1,11 +1,10 @@
 import  {connect} from  'react-redux';
 import NewSongs from '../components/newSongs';
+import {mapDispatchToProps} from './searchList';
 
 export const mapStateToProps = (state) => ({
     albumList: state.hotRecommand.recommandAlbum
 })
-
-export const mapDispatchToProps = (dispatch) => ({})
 
 export default connect(
     mapStateToProps,

@@ -54,8 +54,6 @@ function createWebAPIRequest(host, path, method, data, cookie, callback, errorca
             })
         }
     });
-    console.log('返回的变量');
-    console.log('params=' + cryptoreq.params + '&encSecKey=' + cryptoreq.encSecKey);
     http_client.write('params=' + cryptoreq.params + '&encSecKey=' + cryptoreq.encSecKey);
     http_client.end();
 }
@@ -135,15 +133,16 @@ app.get('/comment', function (request, response) {
 app.get('/music/url', function(request, response) {
     var id = parseInt(request.query.id);
     var data = {
-        "i=ds": [id],
+        "ids": [id],
         "br": 320000,
         "csrf_token": ""
     };
+    console.log(data);
     var cookie = request.get('Cookie') ? request.get('Cookie') : '';
 
     createWebAPIRequest(
         'music.163.com',
-        '/api/song/enhance/player/url',
+        '/weapi/song/enhance/player/url',
         'POST',
         data,
         cookie,
@@ -156,7 +155,7 @@ app.get('/music/url', function(request, response) {
         }
     )
 });
-//http://localhost:3000/search?keywords=%E6%9C%9B%E7%A9%BF&type=1&limit=1
+//http://115.28.238.97 :3000/search?keywords=%E6%9C%9B%E7%A9%BF&type=1&limit=1
 // type:  歌曲1 专辑10 歌手100 歌单1000 用户1002 mv1004 歌词 1006 主播电台 1009
 app.get('/search', function(request, response) {
     var keywords = request.query.keywords;
@@ -169,7 +168,7 @@ app.get('/search', function(request, response) {
         response.send(res);
     });
 });
-//http://localhost:3000/login/cellphone?phone=13870824643&password=fang7693979
+//http://115.28.238.97 :3000/login/cellphone?phone=13870824643&password=fang7693979
 app.get('/login/cellphone', function(request, response) {
     var phone = request.query.phone;
     var cookie = request.get('Cookie') ? request.get('Cookie') : '';
@@ -200,7 +199,7 @@ app.get('/login/cellphone', function(request, response) {
         }
     )
 });
-//http://localhost:3000/login?email=1528021521@qq.com&password=fang7693979
+//http://115.28.238.97 :3000/login?email=1528021521@qq.com&password=fang7693979
 app.get('/login', function(request, response) {
     var email = request.query.email;
     var cookie = request.get('Cookie') ? request.get('Cookie') : '';
@@ -233,7 +232,7 @@ app.get('/login', function(request, response) {
         }
     )
 });
-//http://localhost:3000/recommend/songs   //每日推荐
+//http://115.28.238.97 :3000/recommend/songs   //每日推荐
 app.get('/recommend/songs', function(request, response) {
     var cookie = request.get('Cookie') ? request.get('Cookie') : '';
     var data = {
@@ -288,7 +287,7 @@ app.get('/recommend/resource', function(request, response) {
 
 
 
-//http://localhost:3000/lyric?id=588980
+//http://115.28.238.97 :3000/lyric?id=588980
 app.get('/lyric', function(request, response) {
     var id = request.query.id;
     createRequest('/api/song/lyric?os=osx&id=' + id + '&lv=-1&kv=-1&tv=-1', 'GET', null, function(res) {
@@ -296,7 +295,7 @@ app.get('/lyric', function(request, response) {
         response.send(res);
     });
 });
-//http://localhost:3000/user/playlist?uid=91972124
+//http://115.28.238.97 :3000/user/playlist?uid=91972124
 app.get('/user/playlist', function(request, response) {
     var cookie = request.get('Cookie') ? request.get('Cookie') : '';
     var data = {
@@ -315,7 +314,7 @@ app.get('/user/playlist', function(request, response) {
         data,
         cookie,
         function(music_req) {
-            console.log(music_req);
+            response.setHeader("Content-Type", "application/json");
             response.send(music_req);
         },
         function(err) {
@@ -324,7 +323,7 @@ app.get('/user/playlist', function(request, response) {
     )
 });
 //某一张专辑
-//http://localhost:3000/playlist/detail?id=173934373
+//http://115.28.238.97 :3000/playlist/detail?id=173934373
 app.get('/playlist/detail', function(request, response) {
     var cookie = request.get('Cookie') ? request.get('Cookie') : '';
     var detail, imgurl;
@@ -346,8 +345,10 @@ app.get('/playlist/detail', function(request, response) {
         data,
         cookie,
         function(music_req) {
-            console.log(music_req);
+            response.setHeader("Content-Type", "application/json");
+            // console.log(music_req);
             detail = music_req;
+            // response.send(music_req);
             mergeRes();
         },
         function(err) {
@@ -356,7 +357,7 @@ app.get('/playlist/detail', function(request, response) {
     )
 
     // FIXME:i dont know the api to get coverimgurl
-    // so i get it by parsing html
+    //so i get it by parsing html
     var http_client = http.get({
         hostname: 'music.163.com',
         path: '/playlist?id=' + request.query.id,
@@ -370,7 +371,6 @@ app.get('/playlist/detail', function(request, response) {
             html += chunk;
         });
         res.on('end', function() {
-            console.log('end', html);
             var regImgCover = /\<img src=\"(.*)\" class="j-img"/ig;
             imgurl = regImgCover.exec(html)[1];
             mergeRes();

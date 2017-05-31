@@ -7,9 +7,9 @@ export default class Carousel extends Component{
         super(props);
     }
 
-    componentWillReceiveProps(nextState){
-        console.log(nextState.albumList[0]['/api/v2/banner/get'].banners[0]);
-    }
+    // componentWillReceiveProps(nextState){
+    //     console.log(nextState.albumList[0]['/api/v2/banner/get'].banners[0]);
+    // }
 
     componentDidMount(){
         this.props.AlbumChange().then(()=>{

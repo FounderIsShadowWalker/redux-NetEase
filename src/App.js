@@ -23,7 +23,7 @@ const configureStore = (initialState) => {
         initialState,
         applyMiddleware(
             thunk,
-            // loggerMiddleware
+            loggerMiddleware
         )
     )
 }
