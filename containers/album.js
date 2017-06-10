@@ -4,7 +4,8 @@ import * as actions from '../actions/song';
 import * as commentAction from  '../actions/comment';
 
 export const mapStateToProps = (state) => ({
-  albumList: state.album.album
+  albumList: state.album.album,
+  song: state.song.song
 })
 
 export const mapDispatchToProps = (dispatch) => ({
@@ -20,6 +21,14 @@ export const mapDispatchToProps = (dispatch) => ({
 
     findMusicUrl(songId, song){
         return dispatch(actions.getMusicUrlAction(songId, song));
+    },
+
+    addSong(song){
+        dispatch(actions.addSong(song));
+    },
+
+    addSongList(songlist){
+        dispatch(actions.addSongList(songlist));
     }
 });
 

@@ -18,8 +18,11 @@ export const mapDispatchToProps = (dispatch) => ({
 
     getLyric(songId){
         return dispatch(actions.getLyricAction(songId));
-    }
+    },
 
+    addSong(song){
+        dispatch(actions.addSong(song));
+    }
 
 });
 

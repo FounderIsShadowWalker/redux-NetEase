@@ -28,10 +28,12 @@ export  default class searchList extends Component{
     }
 
     playMusic(index){
-        console.log(this.props.songlist.songs[index]);
+
        this.props.setSongs(this.props.songlist.songs[index]);
 
        this.props.getLyric(this.props.songlist.songs[index].id);
+
+       this.props.addSong(this.props.songlist.songs[index]);
     }
 
     render(){

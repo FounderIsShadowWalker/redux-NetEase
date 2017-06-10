@@ -2,15 +2,52 @@ import React, {Component} from 'react';
 import style from '../css/footBar.css';
 import pause from '../img/pause.png';
 import play from  '../img/playdown.png';
+
 var index = 0;
 
 export  default class footBar extends Component{
 
-    componentWillReceiveProps(nextState){
+    componentWillReceiveProps(nextState){;
         if(nextState.song) {
-            this.Audio(nextState);
+            this.Audio.bind(this)(nextState);
             this.bindEvent();
         }
+    }
+
+    prev(){
+        console.log('上一曲');
+        if(this.props.playIndex < this.props.songlist.length - 1) {
+            this.props.prev();
+        }
+        else{
+            alert('没有上一曲');
+        }
+    }
+
+    next(){
+        console.log('下一曲');
+        if(this.props.playIndex == 0){
+            alert('没有下一曲');
+        }
+        else{
+            this.props.next();
+        }
+    }
+
+    componentDidUpdate(nextProps, nextState){
+        console.log(this.props.playIndex, nextProps.playIndex);
+        //上一首歌曲
+        if(this.props.playIndex -  nextProps.playIndex == 1){
+            this.props.setSongs(this.props.songlist[this.props.playIndex]);
+            this.props.getLyric(this.props.songlist[this.props.playIndex].id);
+        }
+        //下一首
+        else if(this.props.playIndex -  nextProps.playIndex == -1){
+            console.log('下一曲',this.props.playIndex);
+            this.props.setSongs(this.props.songlist[this.props.playIndex]);
+            this.props.getLyric(this.props.songlist[this.props.playIndex].id);
+        }
+
     }
 
     playOrPause(){
@@ -45,7 +82,7 @@ export  default class footBar extends Component{
 
         playIcon.style.backgroundImage = `url(${pause})`;
 
-        audio.volumn = 0.5;
+            audio.volumn = 0.5;
 
 
             audio.ontimeupdate = function () {
@@ -59,7 +96,7 @@ export  default class footBar extends Component{
                 time = min + ':' + s;
 
                 timer.innerHTML = `${time}/${nextState.duration}`;
-                progressBar.style.background = `linear-gradient(90deg, red ${rate * progressBar.offsetWidth}px,#EBEBEB 0px, #EBEBEB ${progessRate * progressBar.offsetWidth}px, gray 0px)`;
+                 progressBar.style.background = `linear-gradient(90deg, red ${rate * progressBar.offsetWidth}px,#EBEBEB 0px, #EBEBEB ${progessRate * progressBar.offsetWidth}px, gray 0px)`;
 
 
                 //这里改变右边歌词栏的position;
@@ -80,6 +117,10 @@ export  default class footBar extends Component{
                 var progessRate = audio.buffered.end(audio.buffered.length - 1) / audio.duration;
                 progressBar.style.background = `linear-gradient(90deg, red ${rate * progressBar.offsetWidth}px, #EBEBEB 0px, #EBEBEB ${progessRate * progressBar.offsetWidth}px, gray 0px)`;
 
+            }
+            
+            audio.onended= function () {
+                that.next();
             }
     }
 
@@ -167,7 +208,6 @@ export  default class footBar extends Component{
     }
 
     render(){
-        console.log(this.props);
         return (
             <div className={style.frostGlass}>
                 <div className={style.wrapper}>
@@ -177,13 +217,13 @@ export  default class footBar extends Component{
                            autoPlay="autoplay"
 
                     ></audio>
-                    <span className={style.prev}>
+                    <span className={style.prev} onClick={this.prev.bind(this)}>
                         <i className={style.prevIcon}></i>
                     </span>
                     <span className={style.play} onClick={this.playOrPause}>
                         <i className={style.playIcon} id="playIcon"></i>
                     </span>
-                    <span className={style.next}>
+                    <span className={style.next}  onClick={this.next.bind(this)}>
                         <i className={style.nextIcon}></i>
                     </span>
                     <span className={style.progressBar} id="progressBar">

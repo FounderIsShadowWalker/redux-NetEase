@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import style from '../css/album.css';
 import CommentTime from '../components/commentTime';
 import TimeSpan from '../components/timeSpan';
+import method from '../plugin/method';
 
 export default class Album extends Component{
     playMusic(index){
@@ -12,7 +13,22 @@ export default class Album extends Component{
             .then(() => {
                 this.props.setSongs(this.props.albumList.playlist.tracks[index]);
                 this.props.getLyric(this.props.albumList.playlist.tracks[index].id);
+                this.props.addSong(this.props.song);
             })
+    }
+
+    add(){
+        var results = [];
+        new Promise((resolve, reject) => {
+            this.props.albumList.playlist.tracks.forEach((track, index) => {
+                method.findMusicUrl(this.props.albumList.playlist.tracks[index].id, this.props.albumList.playlist.tracks[index]).then((item) => {
+                    results.push(item);
+                    results.length === this.props.albumList.playlist.tracks.length && resolve(results);
+                });
+            })
+        }).then((tracks) => {
+            this.props.addSongList(tracks.reverse());
+        })
     }
 
     render(){
@@ -46,7 +62,7 @@ export default class Album extends Component{
                             <div className={style.buttonWrapper}>
                                 <span className={style.buttonContent}><span className={style.playAll}></span>
                                     播放全部
-                                    <span className={style.add}></span>
+                                    <span className={style.add} onClick={this.add.bind(this)}></span>
                                 </span>
                             </div>
                             <div className={style.buttonWrapper}>
